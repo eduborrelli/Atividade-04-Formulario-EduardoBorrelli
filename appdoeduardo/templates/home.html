@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>Eduardo Borrelli Marinho de Carvalho</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+  <div class = "titulo">
+    <h1>Fórmula SAE</h1>
+  </div>
+  
+  <div class = "texto" style = "text-align: justify;">
+  <p>
+    <b>Formula SAE</b> é uma competição estudantil universitária, organizada pela <i>Society of Automotive Engineers</i> (SAE). No Brasil a competição ocorre em Piracicaba e proporciona aos estudantes a possibilidade de ter contato com a <b>engenharia na prática</b>, por meio do desenvolvimento de um projeto <u>completo</u>: um veículo do tipo Fórmula.
+  </p>
+  <p>
+    Dividida em etapas dinâmicas e estáticas, a competição funciona da seguinte forma: Para as etapas dinâmicas, é necessário estar com o carro na competição, ou seja, uma equipe pode competir sem carro. Nas etapas estáticas, em que as equipes que não conseguiram levar o carro até a competição pode competir, são feitas apresentações acerca do projeto do carro. O intuito é lidar com o carro com a ideia de que ele seja um produto, e a equipe está o vendendo para o avaliador, tanto no quesito engenharia e inovação, quanto no quesito ergonomia e conforto.
+  </p>
+  <p> Além disso, a competição também põe à prova a capacidade do aluno de estabelecer novas relações e auxilia no desenvolvimento da habilidade do estudante de <i>networking</i>, <i>Soft Skill</i> extremamente valorizada no mercado de trabalho. 
+  </p></div>
+
+  <div class = "imagem">
+  <img src="https://www.barracudacomposites.com.br/wp-content/uploads/2017/11/Barracuda-Composites-F%C3%B3rmula-SAE-BRASIL.jpg" width="800"> </div>
+
+<div class = "ol">
+  <h2> Classificação equipes em 2022 </h2> 
+  <ol>
+    {% for equipe in top15 %}
+      <li> 
+        {{ equipe.team }} 
+        <a href="equipes/update/{{equipe.id}}">Atualizar</a>
+        <a href="equipes/delete/{{equipe.id}}">Remover</a>
+      </li>
+    {% endfor %}
+  </ol>
+  <a href="/equipes">Adicionar </a>
+</div>
+
+<div class = "ul">
+  <h2> Setores de estudo comuns em equipes de FSAE </h2> 
+  <ul>
+    {% for sector in sectors %}
+      <li> {{ sector.sector }} </li>
+      <a href="setores/update/{{sector.id}}">Atualizar</a>
+      <a href="setores/delete/{{sector.id}}">Remover</a>
+    {% endfor %}
+  </ul>  
+  <a href="/setores">Adicionar </a>
+</div>
+
+<div class = "tabela">
+  <h2> Equipe da PUC na prova de apresentação (Em negrito) </h2>
+  <div class = "txtable" style = "text-align: justify;">
+  <p>
+  Em 2022, pela primeira vez uma equipe representando a PUC-Rio foi à competição. A equipe Pegasus FSAE, foi à Piracicaba ainda sem ter um carro construído, competir nas estapas estáticas e adquirir conhecimento via <i>networking</i> com outras equipes e <i>feedback</i> dos juízes. E surpreendeu ao ficar na sexta posição em uma das categorias da competição:  
+  </p>
+      <div class = "imagem">
+  <img src="https://www.ctc.puc-rio.br/Upload/Imagem/2021/03/pegasus.png" width="250"> </div>
+  </div>
+  <table>
+    <tr>
+        <td></td>
+        <td><b>Nota</b></td>
+        <td><b>Posição</b></td>
+    </tr>
+  <tr>
+        <td>Formula SAE UFMG</td>
+        <td>100,0</td>
+        <td>1° Lugar</td>
+    </tr>
+  <tr>
+        <td>Poli Racing</td>
+        <td>94,3</td>
+        <td>2° Lugar</td>
+    </tr>
+  <tr>
+        <td>Fórmula Cefast</td>
+        <td>85,7</td>
+        <td>3° Lugar</td>
+    </tr>
+  <tr>
+        <td>Escuderia UFSAE</td>
+        <td>84,3</td>
+        <td>4° Lugar</td>
+    </tr>
+  <tr>
+        <td>Buffalo de Formula SAE</td>
+        <td>75,7</td>
+        <td>5° Lugar</td>
+    </tr>
+    <tr>
+        <td><b>Pegasus FSAE</b></td>
+        <td><b>71,4</b></td>
+        <td><b>6° Lugar</b></td>
+    </tr>
+</table>
+</div>
+<div class = "link">
+ <p>
+  Saiba mais em: <a href="https://saebrasil.org.br/programas-estudantis/formula-sae-brasil/" target="_blank"><b>Fórmula SAE Brasil</b></a>.
+</p> 
+</div>
+</body>
+
+  {% load static %}
+<link rel="stylesheet" href="{% static 'style.css' %}">

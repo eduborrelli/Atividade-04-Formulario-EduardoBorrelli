@@ -1,0 +1,26 @@
+<h1>{{ action }} Equipe </h1>
+
+<form method="post">
+  {% csrf_token %}
+  <div>
+    <label>Equipe:</label>
+    <input name="team" value="{{ top15.team }}">
+  </div>
+
+  <div>
+    <label>Lugar:</label>
+    <input name="place" value="{{ top15.place }}">
+  </div>
+
+  <div>
+    <label>Combustível:</label>
+    <input name="fuel" value="{{ top15.fuel }}">
+  </div>
+
+    <div>
+    <label>Colocação:</label>
+    <input type = "number" name="placement" value="{{ top15.placement }}">
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>

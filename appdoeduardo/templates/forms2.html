@@ -1,0 +1,35 @@
+<h1>{{ action }} Setor</h1>
+
+<form method="post">
+    {% csrf_token %}
+
+  <div>
+    <label for="sector">Setor:</label>
+    <input type="text" id="sector" name="sector" value="{{ sector.sector }}">
+  </div>
+
+  <div>
+    <label for="priority">Prioridade do setor:</label>
+    <input type="number" id="priority" name="priority" value="{{ sector.priority }}">
+  </div>
+
+  <div>
+    <label for="importance">Importância do setor:</label>
+    <select id="importance" name="importance">
+      {% for choice in importance_choices %}
+        <option value="{{ choice.0 }}">{{choice.1}}</option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <div>
+    <label>Dificuldade do setor:</label>
+    <select name="difficulty">
+      {% for choice in difficulty_choices %}
+        <option value="{{ choice.0 }}"> {{ choice.1 }} </option>
+      {% endfor %}
+    </select>
+  </div>
+
+  <input type="submit" value="Registrar">
+</form>
