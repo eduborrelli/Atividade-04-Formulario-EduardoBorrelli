@@ -9,13 +9,19 @@
 </head>
 
 <body>
+
+  
+  {% if request.user.is_authenticated %}
+    <b>Bem-vindo, {{request.user.username}}</b> <br> 
+    <a href="/users/logout">Sair</a>
+  {% endif %}
   <div class = "titulo">
     <h1>Fórmula SAE</h1>
   </div>
   
   <div class = "texto" style = "text-align: justify;">
   <p>
-    <b>Formula SAE</b> é uma competição estudantil universitária, organizada pela <i>Society of Automotive Engineers</i> (SAE). No Brasil a competição ocorre em Piracicaba e proporciona aos estudantes a possibilidade de ter contato com a <b>engenharia na prática</b>, por meio do desenvolvimento de um projeto <u>completo</u>: um veículo do tipo Fórmula.
+    <b>Formula SAE</b> é uma competição estudantil universitária, organizada pela <i>Society of Automotive Engineers</i> (SAE). No Brasil, a competição ocorre em Piracicaba e proporciona aos estudantes a possibilidade de ter contato com a <b>engenharia na prática</b>, por meio do desenvolvimento de um projeto <u>completo</u>: um veículo do tipo Fórmula.
   </p>
   <p>
     Dividida em etapas dinâmicas e estáticas, a competição funciona da seguinte forma: Para as etapas dinâmicas, é necessário estar com o carro na competição, ou seja, uma equipe pode competir sem carro. Nas etapas estáticas, em que as equipes que não conseguiram levar o carro até a competição pode competir, são feitas apresentações acerca do projeto do carro. O intuito é lidar com o carro com a ideia de que ele seja um produto, e a equipe está o vendendo para o avaliador, tanto no quesito engenharia e inovação, quanto no quesito ergonomia e conforto.
